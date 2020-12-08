@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+</head>
+<style type="text/css">
+  li {
+    list-style: none;
+  }
+  .box {
+    background-color: grey;
+    width: 500px;
+    height: 600px;
+    margin-top: 0px;
+    font-family: 'Tahoma';
+
+  }
+  h1 {
+    font-size: 20px;text-align: center;
+  }
+  .btn {
+    background-size: 10px;
+    background-color: black;
+    color: white;
+  }
+  .butt {
+    background-position: center;
+    position: center;
+    padding:10px;
+    width: 100px;
+    margin-left: 40%;
+  }
+  </style>
+<body>
+
+<div class="box">
+  <div class="boxx">
+    <br><br><h1>VALUE EXCHANGER</h1><br><h3>&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbspFIRST U HAVE TO PASS CAPTCHA</h3><br><br>
+
+      <div class="captcha">
+ 
+    
+    <h1 id="demo"> </h1>
+    
+  
+    &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="number" name="number" id="captchaa">
+  <input type = "button" value = "checki" onclick = "captchat()" />
+  </div><br><br>
+
+
+
+    
+<hr>
+
+
+    <input type="number" name="Tugrik" id="utga">
+    <form>
+    <input type="radio" value="USD" id="USD" name="gender">
+    <label for="USD">USD</label><br>
+    <input type="radio" value="EURO" id="EURO"name="gender">
+    <label for="EURO">EURO</label><br>
+    <input type="radio" value="POUND" id="POUND"name="gender">
+    <label for="POUND">POUND</label><br>
+    <input type="radio" value="WON" id="WON"name="gender">
+    <label for="WON">WON</label><br>
+    <input type="radio" value="YEN" id="YEN"name="gender">
+    <label for="YEN">YEN</label><br>
+    <input type="radio" value="YAN" id="YAN"name="gender">
+    <label for="YAN">YAN</label><br>
+
+    </form>
+
+    <input type = "button" id="check" value = "check" onclick = "exchange()" class="butt" />
+    <h1 id="result"></h1>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+    
+
+      var x = document.getElementById("check");
+      x.style.display = "none";
+
+
+    captchaArray = ['4+9', '4*8', '7-3', '5*9', '8/2', '11-5'];
+     captcharesultArray = [13, 32,4, 45, 4, 6];
+     var random = Math.floor(Math.random()*6);
+     console.log(random);
+    var randomItem = captchaArray[random];
+    document.getElementById("demo").innerHTML = randomItem;
+
+    function captchat(){
+     var o = document.getElementById('captchaa').value;
+      if ( o == captcharesultArray[random])
+    {
+       
+        x.style.display = "block";
+        }else {alert("try again");}
+    }
+    
+
+        function exchange(){
+      a = document.getElementById('utga').value;
+
+      var exchangeArray = [2870, 3120, 3500, 2.3, 123, 11];
+
+            if (document.getElementById('USD').checked){
+      sum = a/exchangeArray[0];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "USD";
+      }else
+      if (document.getElementById('EURO').checked){
+      sum = a/exchangeArray[1];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "EURO";
+      }
+      if (document.getElementById('POUND').checked){
+      sum = a/exchangeArray[2];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "POUND";
+      }else
+      if (document.getElementById('WON').checked){
+      sum = a/exchangeArray[3];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "WON";
+      }
+      if (document.getElementById('YEN').checked){
+      sum = a/exchangeArray[4];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "YEN";
+      }else
+      if (document.getElementById('YAN').checked){
+      sum = a/exchangeArray[5];
+      console.log(sum);
+      document.getElementById("result").innerHTML = sum + "YAN";
+      }
+    }
+</script>
+
+</body>
+</html>
